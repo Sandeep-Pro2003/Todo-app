@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>DOM Tutorial</title>
+    <script src="script.js" defer></script>
+    <style>
+      .line-through {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="wrapper w-[100%] min-h-screen bg-slate-50 font-MoonDance bg-[url(background1.jpg)] bg-cover bg-no-repeat bg-center"
+    >
+      <!-- navbar section  -->
+      <nav class="flex items-center justify-between px-5 py-2 text-gray-800">
+        <h1 class="text-3xl font-semibold">Website</h1>
+        <ul class="flex items-center justify-center gap-10">
+          <li
+            class="text-2xl font-semibold cursor-pointer hover:text-yellow-500"
+          >
+            <a href="#home">Home</a>
+          </li>
+          <li
+            class="text-2xl font-semibold cursor-pointer hover:text-yellow-500"
+          >
+            <a href="#">Todo</a>
+          </li>
+          <li
+            class="text-2xl font-semibold cursor-pointer hover:text-yellow-500"
+          >
+            <a href="#">Sign up</a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex items-center justify-center flex-col mt-20 md:mt-40 gap-2"
+      >
+        <h2 id="main-heading" class="text-3xl text-gray-800 font-bold">
+          Manage Your Tasks
+        </h2>
+        <button
+          id="learn-more"
+          class="px-3 py-1.5 bg-gray-500 hover:text-gray-500 text-yellow-500 text-xl font-semibold hover:bg-yellow-500 rounded transition-all ease duration-300"
+        >
+          Learn More
+        </button>
+      </div>
+      <div
+        id="todo-section"
+        class="flex flex-col items-center justify-center gap-3 mt-10"
+      >
+        <h2 class="text-3xl text-gray-800 font-bold">Your Plane for today?</h2>
+        <form id="todo-form" action="" class="">
+          <input
+            class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+            type="text"
+            placeholder="Add Todo"
+          />
+          <button
+            class="ml-5 px-3 py-1.5 bg-gray-500 hover:text-gray-500 text-yellow-500 text-xl font-semibold hover:bg-yellow-500 rounded transition-all ease duration-300"
+            type="submit"
+          >
+            Add Todo
+          </button>
+        </form>
+        <ul id="todoList">
+          <li>
+            <span id="text" class="pl-5">Item 1</span>
+            <div class="pr-2">
+              <button
+                class="text-slate-600 px-3 py-0.5 bg-yellow-500 rounded hover:bg-slate-900 hover:text-white transition-all duration-200"
+              >
+                Done
+              </button>
+              <button
+                class="text-red-600 px-3 py-0.5 bg-slate-800 rounded hover:bg-red-900 hover:text-white transition-all duration-200"
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- signup section -->
+      <div class="flex flex-col items-center justify-center gap-5 mt-10">
+        <h2 class="text-3xl text-gray-800 font-bold">Sign Up</h2>
+        <form
+          action=""
+          class="flex flex-col gap-5 w-[100%] sm:w-[80%] items-center justify-center"
+        >
+          <div
+            class="flex gap-2 flex-col sm:w-[100%] md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] sm:flex-row item-center justify-center sm:justify-between sm:px-5"
+          >
+            <label class="text-2xl font-semibold text-gray-700" for="username"
+              >Username</label
+            >
+            <input
+              class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+              type="text"
+              name="username"
+            />
+          </div>
+          <div
+            class="flex gap-2 flex-col sm:w-[100%] md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] sm:flex-row item-center justify-center sm:justify-between sm:px-5"
+          >
+            <label class="text-2xl font-semibold text-gray-700" for="password"
+              >Password</label
+            >
+            <input
+              class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+              type="text"
+              name="password"
+            />
+          </div>
+          <div
+            class="flex gap-2 flex-col sm:w-[100%] md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] sm:flex-row item-center justify-center sm:justify-between sm:px-5"
+          >
+            <label
+              class="text-2xl font-semibold text-gray-700"
+              for="confirmpassword"
+              >Confirm Password</label
+            >
+            <input
+              class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+              type="password"
+              name="confirmpassword"
+            />
+          </div>
+          <div
+            class="flex gap-2 flex-col sm:w-[100%] md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] sm:flex-row item-center justify-center sm:justify-between sm:px-5"
+          >
+            <label class="text-2xl font-semibold text-gray-700" for="phone"
+              >Phone</label
+            >
+            <input
+              class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+              type="text"
+              name="phone"
+            />
+          </div>
+          <div
+            class="flex gap-2 flex-col sm:w-[100%] md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] sm:flex-row item-center justify-center sm:justify-between sm:px-5"
+          >
+            <label class="text-2xl font-semibold text-gray-700" for="email"
+              >Email</label
+            >
+            <input
+              class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+              type="email"
+              name="email"
+            />
+          </div>
+          <div
+            class="flex gap-2 flex-col sm:w-[100%] md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] sm:flex-row item-center justify-center sm:justify-between sm:px-5"
+          >
+            <label class="text-2xl font-semibold text-gray-700" for="message"
+              >Message</label
+            >
+            <textarea
+              class="text-xl text-gray-800 font-semibold border-2 focus:border-0 focus:outline-none focus:ring-2 focus:ring-yellow-800 outline-0 rounded px-5 py-1 w-[280px] border-gray-700"
+              name="message"
+              id=""
+            ></textarea>
+          </div>
+          <button
+            class="ml-5 mt-5 px-5 py-1 bg-gray-500 hover:text-gray-500 text-yellow-500 text-2xl font-semibold hover:bg-yellow-500 rounded transition-all ease duration-300"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
